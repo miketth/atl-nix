@@ -1,0 +1,33 @@
+diff --git a/BUILD.gn b/BUILD.gn
+index c41552795c..e3e9370af7 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -3656,28 +3656,3 @@ skiasharp_build("SkiaSharp") {
+ 
+   libs = []
+ }
+-
+-skiasharp_build("HarfBuzzSharp") {
+-  cflags = [
+-    "-fno-threadsafe-statics",
+-  ]
+-
+-  defines = [
+-    #"HAVE_FREETYPE",
+-    #"HAVE_ICU",
+-    #"HAVE_ICU_BUILTIN",
+-    "HAVE_OT",
+-    "HAVE_CONFIG_OVERRIDE_H",
+-    "HB_NO_FALLBACK_SHAPE",
+-    # "HB_NO_WIN1256",
+-  ]
+-
+-  include_dirs = [
+-    "third_party/harfbuzz"
+-  ]
+-
+-  _src = "third_party/externals/harfbuzz/src"
+-  sources = [
+-    "$_src/harfbuzz-subset.cc",
+-  ]
+-}
