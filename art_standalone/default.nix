@@ -53,6 +53,10 @@ stdenv.mkDerivation (finalAttrs: {
     bionic-translation
   ];
 
+  preConfigure = ''
+    patchShebangs --build .
+  '';
+
   makeFlags = [
     "____LIBDIR=lib" "____PREFIX=${placeholder "out"}" "____INSTALL_ETC=${placeholder "out"}/etc"
   ];
